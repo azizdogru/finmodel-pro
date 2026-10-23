@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     siteName: 'FinModelPro',
     type: 'website',
   },
+  verification: {
+    google: 'google4a281205e868ab2c',
+  },
 };
 
 export default function RootLayout({
