@@ -13,16 +13,16 @@ export async function POST(req: Request) {
 
     const priceCents = isBundle ? 4900 : 2900;
     const productName = isBundle
-      ? 'All-Access 48 Sektörel Finansal Model & Dashboard Paketi (Excel & Google Sheets)'
+      ? 'All-Access 48 Industry Financial Models & Master Bundle (Excel & Google Sheets)'
       : sector
       ? `${sector.name} 3-Year Financial Model Template (Excel & Sheets)`
-      : 'Sektörel Finansal Model Şablonu (Excel & Google Sheets)';
+      : '3-Year Financial Model Spreadsheet Template (Excel & Sheets)';
 
     const productDescription = isBundle
-      ? 'Tüm 48 sektörün 3 yıllık P&L, Nakit Akışı, CapEx ve Yatırımcı Dashboard modellerine ömür boyu anında erişim.'
+      ? 'Lifetime unlocked access to all 48 commercial industry models, 3-year P&L, Cash Flow, CapEx schedules, and Investor Pitch Deck slides.'
       : sector
-      ? `Banka & Yatırımcı onaylı 3 yıllık ${sector.name} Pro Forma P&L, CapEx bütçesi ve Google Sheets şablonu.`
-      : 'Banka ve yatırımcı sunumuna uygun 3 yıllık Pro Forma ve nakit akışı finansal modeli.';
+      ? `Bank & SBA 7(a) approved 3-year ${sector.name} Pro Forma P&L, CapEx schedule, and Google Sheets copy link.`
+      : 'Bank & investor-ready 3-year dynamic financial model and cash flow projection.';
 
     const baseUrl =
       process.env.NEXT_PUBLIC_BASE_URL ||

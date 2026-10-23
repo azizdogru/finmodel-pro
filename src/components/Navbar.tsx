@@ -36,7 +36,7 @@ export default function Navbar({ onOpenCheckout }: Props) {
                 Excel & Sheets
               </span>
             </div>
-            <p className="text-[10px] text-zinc-400 -mt-0.5">Sektörel 3 Yıllık Finansal Modeller</p>
+            <p className="text-[10px] text-zinc-400 -mt-0.5">3-Year Industry Financial Models</p>
           </div>
         </Link>
 
@@ -46,25 +46,25 @@ export default function Navbar({ onOpenCheckout }: Props) {
             href="/#sectors"
             className="hover:text-emerald-400 transition-colors"
           >
-            48 Sektör Modeli
+            48 Industry Models
           </Link>
           <Link
             href="/#features"
             className="hover:text-emerald-400 transition-colors"
           >
-            Banka & SBA Standardı
+            Bank & SBA Standard
           </Link>
           <Link
             href="/#pricing"
             className="hover:text-emerald-400 transition-colors"
           >
-            Fiyatlandırma
+            Pricing
           </Link>
           <Link
             href="/#faq"
             className="hover:text-emerald-400 transition-colors"
           >
-            Sıkça Sorulanlar
+            FAQ
           </Link>
         </div>
 
@@ -74,14 +74,14 @@ export default function Navbar({ onOpenCheckout }: Props) {
             onClick={() => onOpenCheckout ? onOpenCheckout('single') : (window.location.href = '/#sectors')}
             className="rounded-lg border border-zinc-700/80 bg-zinc-900 px-3.5 py-2 text-xs font-semibold text-zinc-200 hover:border-zinc-500 hover:bg-zinc-800 transition-all"
           >
-            Tek Model ($29)
+            Single Model ($29)
           </button>
           <button
             onClick={() => onOpenCheckout ? onOpenCheckout('bundle') : (window.location.href = '/#pricing')}
             className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-500 px-4 py-2 text-xs font-bold text-zinc-950 shadow-md shadow-emerald-500/20 hover:bg-emerald-400 hover:scale-[1.02] active:scale-[0.98] transition-all"
           >
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Tüm Sektörler Paketi ($49)</span>
+            <span>All-Access Bundle ($49)</span>
           </button>
         </div>
 
@@ -104,21 +104,21 @@ export default function Navbar({ onOpenCheckout }: Props) {
             onClick={() => setMobileMenuOpen(false)}
             className="block text-sm text-zinc-300 hover:text-emerald-400"
           >
-            48 Sektör Modeli
+            48 Industry Models
           </Link>
           <Link
             href="/#features"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-sm text-zinc-300 hover:text-emerald-400"
           >
-            Banka & SBA Standardı
+            Bank & SBA Standard
           </Link>
           <Link
             href="/#pricing"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-sm text-zinc-300 hover:text-emerald-400"
           >
-            Fiyatlandırma
+            Pricing
           </Link>
           <div className="pt-2 flex flex-col gap-2">
             <button
@@ -128,7 +128,7 @@ export default function Navbar({ onOpenCheckout }: Props) {
               }}
               className="w-full text-center rounded-lg bg-emerald-500 py-2.5 text-xs font-bold text-zinc-950"
             >
-              Tüm 48 Model Paketini İndir ($49)
+              Get All 48 Models Bundle ($49)
             </button>
           </div>
         </div>

@@ -20,23 +20,23 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'FinModelPro | Sektörel Finansal Modeller & Dashboard Tabloları (Excel & Sheets)',
+  title: 'FinModelPro | Industry Financial Models & 3-Year Pro Forma Spreadsheets',
   description:
-    'KOBİ\'ler, girişimciler ve yatırım arayanlar için 48 sektöre özel 3 yıllık P&L, Nakit Akışı, CapEx ve Unit Economics finansal modelleri. Banka & SBA 7(a) formatında, anında Excel ve Google Sheets teslimi.',
+    'Bank-ready, SBA 7(a) approved 3-year P&L, Cash Flow, CapEx schedules, and Unit Economics financial model spreadsheets for 48 commercial industries. Instant Microsoft Excel (.xlsx) & Google Sheets delivery.',
   keywords: [
-    'finansal model excel şablonu',
-    'pro forma excel template',
-    'sektörel fizibilite tablosu',
-    'kafe finansal model',
+    'financial model excel template',
+    'pro forma spreadsheet',
+    'sba loan financial projection spreadsheet',
+    'coffee shop financial model excel',
     'saas financial model excel',
     'gym business plan spreadsheet',
     'airbnb cash flow projection',
-    'sba loan financial projection spreadsheet',
+    '3 year financial projection model',
   ],
   openGraph: {
-    title: 'FinModelPro | Banka ve Yatırımcı Onaylı Sektörel Finansal Modeller',
+    title: 'FinModelPro | Bank-Ready Industry Financial Models & Pro Forma Templates',
     description:
-      '48 farklı sektör için 3 yıllık dinamik gelir tablosu, başabaş hesaplayıcı, CapEx dökümü ve Google Sheets şablonu.',
+      '48 industry-specific 3-year dynamic financial models with built-in P&L, break-even calculators, CapEx schedules, and Google Sheets templates.',
     url: 'https://finmodel-pro.vercel.app',
     siteName: 'FinModelPro',
     type: 'website',
@@ -72,41 +72,41 @@ export default function HomePage() {
           {/* Top Pill */}
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-400">
             <Sparkles className="h-4 w-4" />
-            <span>2026 Banka & Yatırımcı Standartlarında Sektörel Şablonlar</span>
+            <span>2026 Commercial Bank & SBA 7(a) Underwriting Standards</span>
           </div>
 
           {/* Main H1 */}
           <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Sektörel Finansal Modeller &{' '}
+            Industry Financial Models &{' '}
             <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-              Dashboard Tabloları
+              Pro Forma Spreadsheets
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-zinc-300 sm:text-xl sm:leading-8">
-            KOBİ'ler, yeni girişimciler ve yatırım arayanlar için <strong>48 sektöre özel</strong> 3 yıllık Pro Forma P&L, Nakit Akışı, CapEx bütçesi ve Unit Economics tabloları.
+            Institutional-grade 3-year Pro Forma P&L, Cash Flow, CapEx schedules, and Unit Economics models for <strong>48 commercial industries</strong>.
             <br className="hidden sm:inline" />
-            Banka & SBA kredi formatına hazır, formülleri açık <strong>Excel ve Google Sheets</strong> teslimatı.
+            Bank loan and investor ready. 100% unlocked formulas in <strong>Microsoft Excel (.xlsx) and Google Sheets</strong>.
           </p>
 
           {/* Quick Metrics Bar */}
           <div className="mx-auto mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-zinc-400">
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-              <span>48 Ticari Sektör Modeli</span>
+              <span>48 Commercial Industry Templates</span>
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-              <span>SBA 7(a) ve Banka Kredi Formatı</span>
+              <span>SBA 7(a) & Commercial Bank Format</span>
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-              <span>100% Açık Dinamik Formüller</span>
+              <span>100% Unlocked Dynamic Formulas</span>
             </div>
             <div className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-              <span>Anında İndirme + Google Sheets</span>
+              <span>Instant Excel Download + Google Sheets Copy</span>
             </div>
           </div>
 
@@ -115,14 +115,14 @@ export default function HomePage() {
             <CheckoutButton
               plan="bundle"
               variant="bundle"
-              label="Tüm 48 Modeli İndir ($49) — Ömür Boyu"
+              label="Download All 48 Models ($49) — Lifetime Access"
               showGuarantee={true}
             />
             <a
               href="#sectors"
               className="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/90 px-6 py-3.5 text-sm font-semibold text-zinc-200 hover:border-zinc-700 hover:bg-zinc-800 transition-all"
             >
-              <span>Sektörleri Keşfet</span>
+              <span>Explore All Industries</span>
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -137,9 +137,9 @@ export default function HomePage() {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400 mb-4">
                 <ShieldCheck className="h-5 w-5" />
               </div>
-              <h3 className="text-base font-bold text-white">Banka & SBA 7(a) Uyumlu</h3>
+              <h3 className="text-base font-bold text-white">SBA 7(a) & Bank Compliant</h3>
               <p className="mt-2 text-xs leading-relaxed text-zinc-400">
-                Ticari bankalar ve SBA kredi uzmanlarının aradığı DSCR (Borç Karşılama Oranı {'>='} 1.25x), işletme sermayesi tamponu ve 36 aylık nakit akışı standartlarına tam uygundur.
+                Satisfies strict commercial lender covenants including Debt Service Coverage Ratios (DSCR {'>='} 1.25x), 3-year cash flow runway, and working capital buffers.
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-base font-bold text-white">Excel + Google Sheets</h3>
               <p className="mt-2 text-xs leading-relaxed text-zinc-400">
-                Tek tıkla Google Sheets'e kopyalayın veya Microsoft Excel (.xlsx) olarak indirin. Sıfır karmaşık makro, tamamen standart ve taşınabilir SUMIFS / XLOOKUP formülleri.
+                One-click copy to your Google Drive or download as Microsoft Excel (.xlsx). Zero proprietary VBA macros, built with standard SUMIFS and XLOOKUP formulas.
               </p>
             </div>
 
@@ -157,9 +157,9 @@ export default function HomePage() {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400 mb-4">
                 <TrendingUp className="h-5 w-5" />
               </div>
-              <h3 className="text-base font-bold text-white">Gerçekçi Sektör Metrikleri</h3>
+              <h3 className="text-base font-bold text-white">Domain-Specific Benchmarks</h3>
               <p className="mt-2 text-xs leading-relaxed text-zinc-400">
-                Boş beyaz tablolar yerine; sektörün gerçek ortalama bilet tutarları, COGS marjları, personel maaş matrisleri ve CapEx ekipman fiyatları hazır girilmiş olarak gelir.
+                Pre-populated with real industry benchmarks: food/beverage COGS, staff payroll grids, equipment CapEx lines, and realistic customer ticket sizes.
               </p>
             </div>
           </div>
@@ -171,13 +171,13 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-              Sektörel pSEO Kütüphanesi
+              Industry pSEO Library
             </span>
             <h2 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl">
-              İşinize Özel Finansal Modeli Seçin
+              Choose Your Industry Financial Model
             </h2>
             <p className="mt-3 text-sm text-zinc-400">
-              Her sektörün dinamik sayfasında canlı simülatör, CapEx dökümü ve birim iktisadı parametreleri mevcuttur.
+              Each dedicated sector page includes a live interactive sandbox, itemized CapEx breakdown, and unit economics simulator.
             </p>
           </div>
 
@@ -190,13 +190,13 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-16">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-              Şeffaf ve Adil Fiyatlandırma
+              Transparent One-Time Pricing
             </span>
             <h2 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl">
-              Aylık Abonelik Yok, Tek Seferlik Ödeme
+              No Subscriptions. Pay Once, Own Forever.
             </h2>
             <p className="mt-3 text-sm text-zinc-400">
-              Bir finansal analiste $2,500 ödemek veya günlerce boş tablolarla uğraşmak yerine; dakikalar içinde banka ve yatırımcıya hazır olun.
+              Avoid paying $2,500+ to a financial analyst or spending weeks struggling with blank spreadsheets. Be bank-ready in minutes.
             </p>
           </div>
 
@@ -205,34 +205,34 @@ export default function HomePage() {
             <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-8 flex flex-col justify-between">
               <div>
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-bold text-white">Tekil Sektör Modeli</h3>
-                  <span className="rounded bg-zinc-800 px-2 py-0.5 text-xs text-zinc-400">Tek Sektör</span>
+                  <h3 className="text-lg font-bold text-white">Single Industry Model</h3>
+                  <span className="rounded bg-zinc-800 px-2 py-0.5 text-xs text-zinc-400">1 Industry</span>
                 </div>
                 <p className="mt-2 text-xs text-zinc-400">
-                  Yalnızca seçtiğiniz tek bir işletme/sektör için eksiksiz 3 yıllık Pro Forma modeli.
+                  Complete 3-year Pro Forma financial model for your specific selected business.
                 </p>
 
                 <div className="mt-6 flex items-baseline gap-2">
                   <span className="text-4xl font-black text-white">$29</span>
-                  <span className="text-xs text-zinc-500">tek seferlik / KDV dahil</span>
+                  <span className="text-xs text-zinc-500">one-time payment / VAT included</span>
                 </div>
 
                 <ul className="mt-6 space-y-3 text-xs text-zinc-300">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                    <span>Seçilen sektör için 36 Aylık Dinamik P&L Tablosu</span>
+                    <span>36-Month Dynamic P&L Spreadsheet</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                    <span>Detaylı CapEx & Başlangıç Yatırım Dökümü</span>
+                    <span>Itemized CapEx & Startup Equipment Schedule</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                    <span>Aylık Sabit OPEX ve Maaş Matrisi</span>
+                    <span>Monthly Fixed OPEX & Payroll Matrix</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                    <span>Microsoft Excel (.xlsx) + Google Sheets Tek Tık Erişim</span>
+                    <span>Microsoft Excel (.xlsx) + Google Sheets One-Click Copy</span>
                   </li>
                 </ul>
               </div>
@@ -240,7 +240,7 @@ export default function HomePage() {
               <div className="mt-8 pt-6 border-t border-zinc-800/80">
                 <CheckoutButton
                   plan="single"
-                  label="Tek Sektör Modelini İndir — $29"
+                  label="Download Single Model — $29"
                   className="w-full text-center"
                 />
               </div>
@@ -249,42 +249,42 @@ export default function HomePage() {
             {/* Master Bundle (Featured) */}
             <div className="rounded-2xl border-2 border-emerald-500 bg-gradient-to-b from-emerald-950/30 via-zinc-900 to-zinc-950 p-8 flex flex-col justify-between relative shadow-2xl shadow-emerald-500/10">
               <div className="absolute -top-3.5 right-6 rounded-full bg-emerald-500 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-zinc-950">
-                En Popüler Seçenek
+                Most Popular for Founders
               </div>
 
               <div>
                 <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-black text-white">Tüm 48 Model & Master Bundle</h3>
+                  <h3 className="text-lg font-black text-white">All-Access 48 Models & Master Bundle</h3>
                   <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-xs font-bold text-emerald-300 border border-emerald-500/30">
-                    Sınırsız Lisans
+                    Unlimited Lifetime License
                   </span>
                 </div>
                 <p className="mt-2 text-xs text-zinc-300">
-                  Portföy kurucuları, yatırımcılar, danışmanlar ve ajanslar için 48 sektörün tamamı.
+                  For portfolio builders, consultants, agencies, and entrepreneurs evaluating multiple ventures.
                 </p>
 
                 <div className="mt-6 flex items-baseline gap-2">
                   <span className="text-4xl font-black text-white">$49</span>
                   <span className="text-xs text-zinc-400 line-through">$1,392</span>
-                  <span className="text-xs text-emerald-400 font-bold">%96 İndirim</span>
+                  <span className="text-xs text-emerald-400 font-bold">96% OFF</span>
                 </div>
 
                 <ul className="mt-6 space-y-3 text-xs text-zinc-200">
                   <li className="flex items-center gap-2 font-medium">
                     <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                    <span><strong>48 Sektörün Tamamı:</strong> Kafe, MedSpa, SaaS, Gym, Airbnb vb.</span>
+                    <span><strong>All 48 Industries Included:</strong> Cafe, MedSpa, SaaS, Gym, Airbnb, Dental, etc.</span>
                   </li>
                   <li className="flex items-center gap-2 font-medium">
                     <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                    <span><strong>Yatırımcı Pitch Deck:</strong> Finansal Slayt & Grafik Şablonları</span>
+                    <span><strong>Investor Pitch Deck Pack:</strong> Financial Summary Slides & Charts</span>
                   </li>
                   <li className="flex items-center gap-2 font-medium">
                     <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                    <span><strong>SBA 7(a) & Banka:</strong> Kredi Uyumluluk ve DSCR Şablonu</span>
+                    <span><strong>SBA 7(a) & Bank Ready:</strong> Lender Covenant & DSCR Schedules</span>
                   </li>
                   <li className="flex items-center gap-2 font-medium">
                     <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
-                    <span>Gelecekte Eklenecek Yeni Sektörlere <strong>Ömür Boyu Ücretsiz Erişim</strong></span>
+                    <span><strong>Free Lifetime Updates:</strong> All future models added automatically</span>
                   </li>
                 </ul>
               </div>
@@ -293,7 +293,7 @@ export default function HomePage() {
                 <CheckoutButton
                   plan="bundle"
                   variant="bundle"
-                  label="Tüm 48 Modeli $49'a İndir"
+                  label="Get All 48 Models for $49"
                   className="w-full text-center"
                   showGuarantee={true}
                 />
@@ -308,38 +308,38 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-              SSS
+              FAQ
             </span>
             <h2 className="mt-2 text-3xl font-extrabold text-white">
-              Sıkça Sorulan Sorular
+              Frequently Asked Questions
             </h2>
           </div>
 
           <div className="space-y-4">
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
               <h4 className="text-sm font-bold text-white">
-                Satın aldıktan sonra dosyayı nasıl teslim alıyorum?
+                How do I receive the files after checkout?
               </h4>
               <p className="mt-2 text-xs leading-relaxed text-zinc-400">
-                Ödemenizi tamamladığınız saniyede doğrudan `/success` sayfasına yönlendirilirsiniz. Bu sayfada tek tıkla Excel (.xlsx) dosyasını indirebilir ve Google Sheets şablonunu doğrudan kendi Google Drive hesabınıza kopyalayabilirsiniz. Ayrıca indirme linkleri e-posta adresinize de gönderilir.
+                Immediately after completing checkout, you are redirected to the confirmation page where you can download the Microsoft Excel (.xlsx) file with one click and access the official Google Sheets copy template. A backup copy and license key are also sent to your email instantly.
               </p>
             </div>
 
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
               <h4 className="text-sm font-bold text-white">
-                Tablodaki formüller kilitli mi, kendi rakamlarımı girebilir miyim?
+                Are formulas unlocked? Can I enter my own assumptions?
               </h4>
               <p className="mt-2 text-xs leading-relaxed text-zinc-400">
-                Kesinlikle kilitli değildir! Tüm hücreler, formüller ve satırlar 100% düzenlenebilir biçimdedir. Kendi kira bedelinizi, yerel personel ücretlerinizi ve satış hedeflerinizi girebilirsiniz; tüm kâr/zarar, nakit akışı ve başabaş grafikleri anında otomatik güncellenir.
+                Yes, 100% unlocked. There are no password-protected sheets or hidden cells. You can customize your local rent rates, staff hourly wages, pricing tiers, and growth assumptions—every chart, EBITDA metric, and cash flow statement recalculates in real-time.
               </p>
             </div>
 
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
               <h4 className="text-sm font-bold text-white">
-                Banka kredisi ve melek yatırımcı görüşmelerinde bu format geçerli mi?
+                Is this accepted by commercial banks and angel investors?
               </h4>
               <p className="mt-2 text-xs leading-relaxed text-zinc-400">
-                Evet. Tablolarımız ABD Küçük İşletmeler İdaresi (SBA 7a/504) standartları ve kurumsal ticari kredi underwriting esaslarına göre hazırlanmıştır. Borç Karşılama Oranı (DSCR), Brüt & Net Marjlar ve 3 yıllık amortisman çizelgeleri tam olarak bankacıların talep ettiği hiyerarşidedir.
+                Yes. Our spreadsheets follow standard US Small Business Administration (SBA 7a/504) guidelines and commercial underwriting conventions. Debt Service Coverage Ratios (DSCR), gross margins, working capital reserves, and 3-year depreciation schedules are formatted exactly as credit officers expect.
               </p>
             </div>
           </div>

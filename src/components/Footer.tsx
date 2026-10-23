@@ -21,7 +21,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-xs leading-relaxed text-zinc-400">
-              KOBİ'ler, yeni girişimciler ve yatırım arayan kurucular için sektöre özel, banka & SBA onay standardında 3 yıllık P&L, Nakit Akışı ve CapEx finansal modelleri.
+              Bank-ready, SBA 7(a) compliant 3-year Pro Forma P&L, Cash Flow, CapEx schedules, and Unit Economics financial model templates for SMBs, founders, and commercial lenders.
             </p>
             <div className="flex items-center gap-3 pt-2 text-xs text-zinc-500">
               <span className="inline-flex items-center gap-1">
@@ -38,7 +38,7 @@ export default function Footer() {
           {/* Column 2: Popular Models */}
           <div className="md:col-span-2">
             <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-200 mb-4">
-              Popüler Sektörel Finansal Modeller
+              Popular Industry Financial Models
             </h4>
             <div className="grid grid-cols-2 gap-2 text-xs">
               {topSectors.map((sector) => (
@@ -57,34 +57,34 @@ export default function Footer() {
           {/* Column 3: Trust & Format */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-200">
-              Desteklenen Formatlar
+              Supported Formats
             </h4>
             <ul className="space-y-2 text-xs">
               <li className="flex items-center gap-2 text-zinc-300">
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-                <span>Microsoft Excel (.xlsx) Formüllü</span>
+                <span>Microsoft Excel (.xlsx) Unlocked Formulas</span>
               </li>
               <li className="flex items-center gap-2 text-zinc-300">
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-                <span>Google Sheets Tek Tık Kopya</span>
+                <span>Google Sheets One-Click Copy</span>
               </li>
               <li className="flex items-center gap-2 text-zinc-300">
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-                <span>Apple Numbers & LibreOffice Uyumlu</span>
+                <span>Apple Numbers & LibreOffice Ready</span>
               </li>
               <li className="flex items-center gap-2 text-zinc-300">
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-                <span>SBA 7(a) & Ticari Kredi Rapor Formatı</span>
+                <span>SBA 7(a) & Commercial Underwriting Layout</span>
               </li>
               <li className="flex items-center gap-2 text-zinc-300">
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-                <span>Ömür Boyu Ücretsiz Güncelleme</span>
+                <span>Free Lifetime Updates Included</span>
               </li>
             </ul>
 
             <div className="pt-4 border-t border-zinc-900">
               <span className="text-[11px] text-zinc-500">
-                Güvenli Ödeme Altyapısı: <strong>LemonSqueezy</strong>
+                Secure Merchant Processor: <strong>LemonSqueezy</strong>
               </span>
             </div>
           </div>
@@ -93,12 +93,12 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-zinc-800/80 pt-6 text-xs text-zinc-500 sm:flex-row">
           <div>
-            © {new Date().getFullYear()} FinModelPro. Tüm hakları saklıdır. Banka ve ticari planlama amacıyla hazırlanmıştır.
+            © {new Date().getFullYear()} FinModelPro. All rights reserved. Built for operational planning, bank loans, and venture capital due diligence.
           </div>
           <div className="flex gap-4">
-            <Link href="/" className="hover:text-zinc-300">Anasayfa</Link>
-            <Link href="/#pricing" className="hover:text-zinc-300">Fiyatlandırma</Link>
-            <Link href="/#faq" className="hover:text-zinc-300">Sıkça Sorulanlar</Link>
+            <Link href="/" className="hover:text-zinc-300">Home</Link>
+            <Link href="/#pricing" className="hover:text-zinc-300">Pricing</Link>
+            <Link href="/#faq" className="hover:text-zinc-300">FAQ</Link>
           </div>
         </div>
       </div>

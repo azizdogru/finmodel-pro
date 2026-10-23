@@ -87,27 +87,27 @@ function SuccessContent() {
 
         <span className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-400 border border-emerald-500/20">
           <Sparkles className="h-3.5 w-3.5" />
-          <span>Ödeme Onaylandı • Anında Teslimat</span>
+          <span>Payment Confirmed • Instant Access</span>
         </span>
 
         <h1 className="mt-4 text-3xl font-extrabold text-white sm:text-4xl">
-          Tebrikler! Finansal Modeliniz Hazır
+          Order Complete! Your Model is Ready
         </h1>
 
         <p className="mt-3 text-sm text-zinc-300">
           {isBundle
-            ? 'Tüm 48 Sektör Finansal Model & Master Dashboard Paketi başarıyla hesabınıza tanımlandı.'
-            : `${sector.name} 3 Yıllık Pro Forma Finansal Modeli başarıyla oluşturuldu.`}
+            ? 'All 48 Industry Financial Models & Master Dashboard Bundle are unlocked.'
+            : `${sector.name} 3-Year Pro Forma Financial Model is ready for download.`}
         </p>
 
         {/* License Key Box */}
         <div className="mt-6 inline-flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-950/80 px-4 py-2 text-xs">
-          <span className="text-zinc-500 font-mono">Lisans No:</span>
+          <span className="text-zinc-500 font-mono">License Key:</span>
           <span className="font-mono font-bold text-emerald-400">{licenseKey}</span>
           <button
             onClick={copyLicense}
             className="text-zinc-400 hover:text-white transition-colors"
-            title="Kopyala"
+            title="Copy license key"
           >
             {copiedLicense ? <Check className="h-4 w-4 text-emerald-400" /> : <Copy className="h-4 w-4" />}
           </button>
@@ -122,7 +122,7 @@ function SuccessContent() {
           >
             <Download className="h-4 w-4" />
             <span>
-              {downloading ? 'Excel İndiriliyor...' : `Excel (.xlsx) Dosyasını İndir`}
+              {downloading ? 'Preparing Excel File...' : `Download Microsoft Excel (.xlsx)`}
             </span>
           </button>
 
@@ -133,7 +133,7 @@ function SuccessContent() {
             className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-800/80 px-6 py-3.5 text-sm font-semibold text-zinc-100 hover:bg-zinc-700 transition-all"
           >
             <FileSpreadsheet className="h-4 w-4 text-emerald-400" />
-            <span>Google Sheets'te Aç</span>
+            <span>Open in Google Sheets</span>
             <ExternalLink className="h-3.5 w-3.5 text-zinc-400" />
           </a>
         </div>
@@ -142,10 +142,10 @@ function SuccessContent() {
         {isBundle && (
           <div className="mt-12 text-left border-t border-zinc-800 pt-8">
             <h3 className="text-base font-bold text-white mb-2">
-              Paketinizdeki 48 Sektör Modeli (İstediğinizi Tek Tıkla İndirin):
+              All 48 Industry Models in Your Bundle (One-Click Downloads):
             </h3>
             <p className="text-xs text-zinc-400 mb-4">
-              Her dosya ilgili sektöre özel gerçekçi maliyet ve ciro formülleriyle donatılmıştır:
+              Each file is pre-loaded with realistic revenue curves, CapEx items, and unlocked formulas:
             </p>
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 max-h-96 overflow-y-auto pr-2">
               {SECTORS.map((s) => (
@@ -166,13 +166,13 @@ function SuccessContent() {
         <div className="mt-10 rounded-xl border border-zinc-800/80 bg-zinc-950/60 p-5 text-left text-xs text-zinc-300">
           <h4 className="font-bold text-white mb-2 flex items-center gap-1.5">
             <ShieldCheck className="h-4 w-4 text-emerald-400" />
-            <span>Finansal Modeli Kullanma Adımları:</span>
+            <span>How to Use Your Financial Model:</span>
           </h4>
           <ol className="list-decimal pl-5 space-y-1.5 text-zinc-400">
-            <li>İndirdiğiniz <code>.xlsx</code> dosyasını Microsoft Excel veya Google Drive'da açın.</li>
-            <li><code>Assumptions</code> veya <code>Executive Summary</code> sayfasındaki mavi hücrelere kendi kira, ciro ve personel hedeflerinizi girin.</li>
-            <li>Siyah hücrelerdeki formülleri silmeyiniz; tüm P&L, Nakit Akışı ve EBITDA grafikleri otomatik güncellenecektir.</li>
-            <li>Bankacı veya yatırımcınıza sunarken doğrudan PDF çıktısı alarak sunum dosyanıza ekleyebilirsiniz.</li>
+            <li>Open the downloaded <code>.xlsx</code> file in Microsoft Excel or import it directly into Google Drive.</li>
+            <li>Fill in your custom local lease rates, payroll expectations, and ticket sizes in the Assumptions tab.</li>
+            <li>All formulas, charts, P&L schedules, and EBITDA waterfalls will automatically recalculate.</li>
+            <li>Export directly to PDF for bank loan applications, SBA 7(a) packages, or investor meetings.</li>
           </ol>
         </div>
 
@@ -181,7 +181,7 @@ function SuccessContent() {
             href="/"
             className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-emerald-400 transition-colors"
           >
-            <span>FinModelPro Anasayfasına Dön</span>
+            <span>Return to FinModelPro Homepage</span>
             <ArrowRight className="h-3 w-3" />
           </Link>
         </div>

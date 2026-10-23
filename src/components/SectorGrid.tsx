@@ -51,7 +51,7 @@ export default function SectorGrid() {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Sektör veya model ara (örn: Kafe, Gym, MedSpa, SaaS, Airbnb)..."
+            placeholder="Search industry or model (e.g. Coffee Shop, Gym, MedSpa, SaaS, Airbnb)..."
             className="w-full rounded-xl border border-zinc-800 bg-zinc-900/90 py-2.5 pl-10 pr-4 text-xs text-zinc-100 placeholder-zinc-500 shadow-inner focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
           />
           {search && (
@@ -59,7 +59,7 @@ export default function SectorGrid() {
               onClick={() => setSearch('')}
               className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-zinc-500 hover:text-zinc-300"
             >
-              Temizle
+              Clear
             </button>
           )}
         </div>
@@ -76,7 +76,7 @@ export default function SectorGrid() {
                   : 'bg-zinc-900 text-zinc-400 hover:text-zinc-200 border border-zinc-800'
               }`}
             >
-              {ind === 'All' ? 'Tüm Sektörler (48)' : ind}
+              {ind === 'All' ? 'All Industries (48)' : ind}
             </button>
           ))}
         </div>
@@ -85,7 +85,7 @@ export default function SectorGrid() {
       {/* Results Count */}
       <div className="flex items-center justify-between text-xs text-zinc-500">
         <span>
-          <strong>{filteredSectors.length}</strong> finansal model şablonu listeleniyor
+          Showing <strong>{filteredSectors.length}</strong> financial model templates
         </span>
         <span>Format: Microsoft Excel (.xlsx) + Google Sheets</span>
       </div>
@@ -104,7 +104,7 @@ export default function SectorGrid() {
                   {sector.industry}
                 </span>
                 <span className="text-zinc-500 font-mono text-[10px]">
-                  {sector.breakevenMonth} Başabaş
+                  {sector.breakevenMonth} Breakeven
                 </span>
               </div>
 
@@ -123,12 +123,12 @@ export default function SectorGrid() {
               {/* Key Metrics Grid */}
               <div className="mt-4 grid grid-cols-2 gap-2 rounded-xl bg-zinc-950/70 p-2.5 border border-zinc-800/60 text-center">
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-zinc-500">Y1 Hedef Ciro</span>
+                  <span className="text-[10px] uppercase tracking-wider text-zinc-500">Y1 Target Rev</span>
                   <div className="font-mono text-xs font-bold text-zinc-200">{sector.typicalY1Revenue}</div>
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-wider text-zinc-500">Brüt Marj</span>
-                  <div className="font-mono text-xs font-bold text-emerald-400">%{sector.grossMarginBenchmark}</div>
+                  <span className="text-[10px] uppercase tracking-wider text-zinc-500">Gross Margin</span>
+                  <div className="font-mono text-xs font-bold text-emerald-400">{sector.grossMarginBenchmark}%</div>
                 </div>
               </div>
             </div>
@@ -136,14 +136,14 @@ export default function SectorGrid() {
             {/* Bottom Actions */}
             <div className="mt-5 flex items-center justify-between border-t border-zinc-800/80 pt-3">
               <span className="text-xs font-bold text-white">
-                $29 <span className="text-[10px] font-normal text-zinc-400">/ tek model</span>
+                $29 <span className="text-[10px] font-normal text-zinc-400">/ single model</span>
               </span>
 
               <Link
                 href={`/${sector.slug}`}
                 className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400 hover:text-emerald-300 group-hover:translate-x-0.5 transition-transform"
               >
-                <span>İncele & İndir</span>
+                <span>View & Download</span>
                 <ArrowRight className="h-3 w-3" />
               </Link>
             </div>

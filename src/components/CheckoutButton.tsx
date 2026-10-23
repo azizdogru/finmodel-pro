@@ -40,7 +40,6 @@ export default function CheckoutButton({
       if (data?.url) {
         window.location.href = data.url;
       } else {
-        // Fallback
         window.location.href = 'https://depositdemand.lemonsqueezy.com/checkout/buy/44ba076c-b57d-429b-af3d-6962ccf4dc46';
       }
     } catch (err) {
@@ -53,8 +52,8 @@ export default function CheckoutButton({
 
   const isBundle = plan === 'bundle';
   const defaultLabel = isBundle
-    ? 'Tüm 48 Sektör Paketini İndir — $49'
-    : 'Hemen İndir (Excel & Google Sheets) — $29';
+    ? 'Get All 48 Models Bundle — $49'
+    : 'Download Excel & Google Sheets — $29';
 
   let variantClasses =
     'bg-emerald-500 hover:bg-emerald-400 text-zinc-950 shadow-emerald-500/25';
@@ -80,7 +79,7 @@ export default function CheckoutButton({
         {loading ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin text-zinc-950" />
-            <span>Ödeme Sayfası Açılıyor...</span>
+            <span>Preparing Secure Checkout...</span>
           </>
         ) : (
           <>
@@ -98,7 +97,7 @@ export default function CheckoutButton({
       {showGuarantee && (
         <div className="mt-2.5 flex items-center gap-1.5 text-xs text-zinc-400">
           <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-          <span>Apple Pay, Google Pay ve Kredi Kartı ile Anında Teslimat</span>
+          <span>Apple Pay, Google Pay & Cards • Instant Delivery</span>
         </div>
       )}
     </div>
