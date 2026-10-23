@@ -17,7 +17,7 @@ export async function GET(req: Request) {
     }
 
     const sector = SECTOR_MAP[sectorSlug];
-    const buffer = generateSectorWorkbook(sector);
+    const buffer = await generateSectorWorkbook(sector);
 
     const safeFilename = `${sector.slug}-financial-model.xlsx`;
 

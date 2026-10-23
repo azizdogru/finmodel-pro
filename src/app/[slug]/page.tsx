@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { SECTORS, SECTOR_MAP, ALL_SECTOR_SLUGS } from '@/data/sectors';
 import FinancialSimulator from '@/components/FinancialSimulator';
+import ExcelPreviewModal from '@/components/ExcelPreviewModal';
 import CheckoutButton from '@/components/CheckoutButton';
 import {
   CheckCircle2,
@@ -255,6 +256,11 @@ export default function SectorPseoPage({ params }: Props) {
 
       {/* Main Content Sections Container */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20 space-y-16">
+        {/* NEW: Interactive Look Inside Excel Preview Component */}
+        <section>
+          <ExcelPreviewModal sector={sector} />
+        </section>
+
         {/* 1. Interactive Pro Forma Simulator Component */}
         <section>
           <FinancialSimulator sector={sector} />

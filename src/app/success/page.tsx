@@ -49,10 +49,10 @@ function SuccessContent() {
     }
   }, []);
 
-  const handleClientDownload = (targetSector = sector) => {
+  const handleClientDownload = async (targetSector = sector) => {
     try {
       setDownloading(true);
-      const buffer = generateSectorWorkbook(targetSector);
+      const buffer = await generateSectorWorkbook(targetSector);
       const blob = new Blob([buffer as unknown as BlobPart], {
         type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       });
@@ -114,7 +114,7 @@ function SuccessContent() {
         </div>
 
         {/* Download Action Buttons */}
-        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row flex-wrap">
           <button
             onClick={() => handleClientDownload(sector)}
             disabled={downloading}
@@ -122,18 +122,28 @@ function SuccessContent() {
           >
             <Download className="h-4 w-4" />
             <span>
-              {downloading ? 'Preparing Excel File...' : `Download Microsoft Excel (.xlsx)`}
+              {downloading ? 'Preparing Excel File...' : `Download 7-Sheet Excel (.xlsx)`}
             </span>
           </button>
 
           <a
-            href="https://docs.google.com/spreadsheets/create"
+            href={`/api/download-checklist?sector=${sector.slug}`}
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-950/30 px-6 py-3.5 text-sm font-bold text-emerald-300 hover:bg-emerald-900/40 transition-all shadow-md"
+            title="Download the official SBA 7(a) Bank Underwriting Checklist in PDF format"
+          >
+            <ShieldCheck className="h-4 w-4 text-emerald-400" />
+            <span>Download Bonus SBA 7(a) Checklist (.pdf)</span>
+          </a>
+
+          <a
+            href="https://sheets.new"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-800/80 px-6 py-3.5 text-sm font-semibold text-zinc-100 hover:bg-zinc-700 transition-all"
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-800/80 px-6 py-3.5 text-sm font-semibold text-zinc-100 hover:bg-zinc-700 transition-all group"
+            title="Open Google Sheets in 1-click and drag-and-drop the downloaded .xlsx file"
           >
-            <FileSpreadsheet className="h-4 w-4 text-emerald-400" />
-            <span>Open in Google Sheets</span>
+            <FileSpreadsheet className="h-4 w-4 text-emerald-400 group-hover:scale-110 transition-transform" />
+            <span>Open in Google Sheets (sheets.new)</span>
             <ExternalLink className="h-3.5 w-3.5 text-zinc-400" />
           </a>
         </div>

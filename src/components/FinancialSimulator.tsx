@@ -375,46 +375,56 @@ export default function FinancialSimulator({ sector, onUnlock }: Props) {
       {/* Visual Pro Forma Bar Comparison */}
       <div className="mt-8 rounded-xl border border-zinc-800/80 bg-zinc-950/90 p-5">
         <div className="flex items-center justify-between text-xs text-zinc-400 pb-3 border-b border-zinc-800">
-          <span className="font-semibold text-zinc-300">3-Year Scaled Pro Forma Waterfall</span>
+          <span className="font-semibold text-zinc-300">3-Year Scaled Pro Forma Waterfall (Revenue & Net Margin)</span>
           <span className="text-emerald-400">Includes 28% Y2 & 22% Y3 compound expansion</span>
         </div>
 
-        <div className="mt-4 space-y-3">
+        <div className="mt-4 space-y-4">
           {/* Year 1 */}
           <div>
-            <div className="flex justify-between text-xs mb-1">
+            <div className="flex justify-between text-xs mb-1.5">
               <span className="font-medium text-zinc-300">Year 1 Pro Forma</span>
-              <span className="font-bold text-white">${annualRevenueY1.toLocaleString()}</span>
+              <div className="flex items-center gap-3">
+                <span className="text-zinc-400 font-mono text-[11px]">
+                  Net: <strong className={netIncomeY1 >= 0 ? 'text-emerald-400' : 'text-rose-400'}>${netIncomeY1.toLocaleString()}</strong> ({netMarginPercent}%)
+                </span>
+                <span className="font-bold text-white">${annualRevenueY1.toLocaleString()}</span>
+              </div>
             </div>
-            <div className="h-3 w-full rounded-full bg-zinc-800 overflow-hidden flex">
+            <div className="h-3.5 w-full rounded-full bg-zinc-800 overflow-hidden flex">
               <div
-                style={{ width: `${100 - cogsPercent}%` }}
-                className="bg-emerald-500 h-full"
-                title="Gross Profit"
+                style={{ width: `${Math.max(0, 100 - cogsPercent)}%` }}
+                className="bg-emerald-500 h-full transition-all duration-300"
+                title={`Gross Profit: $${grossProfitY1.toLocaleString()}`}
               />
               <div
-                style={{ width: `${cogsPercent}%` }}
-                className="bg-zinc-600 h-full"
-                title="Cost of Goods"
+                style={{ width: `${Math.min(100, cogsPercent)}%` }}
+                className="bg-zinc-600 h-full transition-all duration-300"
+                title={`COGS: $${(annualRevenueY1 - grossProfitY1).toLocaleString()}`}
               />
             </div>
           </div>
 
           {/* Year 2 */}
           <div>
-            <div className="flex justify-between text-xs mb-1">
+            <div className="flex justify-between text-xs mb-1.5">
               <span className="font-medium text-zinc-300">Year 2 Pro Forma</span>
-              <span className="font-bold text-white">${annualRevenueY2.toLocaleString()}</span>
+              <div className="flex items-center gap-3">
+                <span className="text-zinc-400 font-mono text-[11px]">
+                  Net: <strong className="text-emerald-400">${Math.round(netIncomeY1 * 1.35).toLocaleString()}</strong>
+                </span>
+                <span className="font-bold text-white">${annualRevenueY2.toLocaleString()}</span>
+              </div>
             </div>
-            <div className="h-3 w-full rounded-full bg-zinc-800 overflow-hidden flex">
+            <div className="h-3.5 w-full rounded-full bg-zinc-800 overflow-hidden flex">
               <div
-                style={{ width: `${Math.min(100, (100 - cogsPercent) * 1.15)}%` }}
-                className="bg-emerald-500 h-full"
+                style={{ width: `${Math.min(100, (100 - cogsPercent) * 1.05)}%` }}
+                className="bg-emerald-500 h-full transition-all duration-300"
                 title="Gross Profit"
               />
               <div
-                style={{ width: `${Math.max(0, 100 - (100 - cogsPercent) * 1.15)}%` }}
-                className="bg-zinc-600 h-full"
+                style={{ width: `${Math.max(0, 100 - (100 - cogsPercent) * 1.05)}%` }}
+                className="bg-zinc-600 h-full transition-all duration-300"
                 title="Cost of Goods"
               />
             </div>
@@ -422,19 +432,24 @@ export default function FinancialSimulator({ sector, onUnlock }: Props) {
 
           {/* Year 3 */}
           <div>
-            <div className="flex justify-between text-xs mb-1">
+            <div className="flex justify-between text-xs mb-1.5">
               <span className="font-medium text-zinc-300">Year 3 Pro Forma</span>
-              <span className="font-bold text-white">${annualRevenueY3.toLocaleString()}</span>
+              <div className="flex items-center gap-3">
+                <span className="text-zinc-400 font-mono text-[11px]">
+                  Net: <strong className="text-emerald-400">${Math.round(netIncomeY1 * 1.75).toLocaleString()}</strong>
+                </span>
+                <span className="font-bold text-white">${annualRevenueY3.toLocaleString()}</span>
+              </div>
             </div>
-            <div className="h-3 w-full rounded-full bg-zinc-800 overflow-hidden flex">
+            <div className="h-3.5 w-full rounded-full bg-zinc-800 overflow-hidden flex">
               <div
-                style={{ width: `${Math.min(100, (100 - cogsPercent) * 1.25)}%` }}
-                className="bg-emerald-500 h-full"
+                style={{ width: `${Math.min(100, (100 - cogsPercent) * 1.10)}%` }}
+                className="bg-emerald-500 h-full transition-all duration-300"
                 title="Gross Profit"
               />
               <div
-                style={{ width: `${Math.max(0, 100 - (100 - cogsPercent) * 1.25)}%` }}
-                className="bg-zinc-600 h-full"
+                style={{ width: `${Math.max(0, 100 - (100 - cogsPercent) * 1.10)}%` }}
+                className="bg-zinc-600 h-full transition-all duration-300"
                 title="Cost of Goods"
               />
             </div>
