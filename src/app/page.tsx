@@ -111,20 +111,25 @@ export default function HomePage() {
           </div>
 
           {/* Action CTAs */}
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <CheckoutButton
-              plan="bundle"
-              variant="bundle"
-              label="Download All 48 Models ($49) — Lifetime Access"
-              showGuarantee={true}
-            />
-            <a
-              href="#sectors"
-              className="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/90 px-6 py-3.5 text-sm font-semibold text-zinc-200 hover:border-zinc-700 hover:bg-zinc-800 transition-all"
-            >
-              <span>Explore All Industries</span>
-              <ArrowRight className="h-4 w-4" />
-            </a>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
+              <CheckoutButton
+                plan="bundle"
+                variant="bundle"
+                label="Download All 48 Models ($49) — Lifetime Access"
+              />
+              <a
+                href="#sectors"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/90 px-6 py-3.5 text-sm font-semibold text-zinc-200 hover:border-zinc-700 hover:bg-zinc-800 transition-all h-12 whitespace-nowrap"
+              >
+                <span>Explore All Industries</span>
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-xs text-zinc-400">
+              <ShieldCheck className="h-4 w-4 text-emerald-400" />
+              <span>Apple Pay, Google Pay & Cards • Instant Delivery • SBA Approved</span>
+            </div>
           </div>
         </div>
       </section>
@@ -295,7 +300,6 @@ export default function HomePage() {
                   variant="bundle"
                   label="Get All 48 Models for $49"
                   className="w-full text-center"
-                  showGuarantee={true}
                 />
               </div>
             </div>

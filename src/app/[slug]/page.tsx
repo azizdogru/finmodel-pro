@@ -230,19 +230,24 @@ export default function SectorPseoPage({ params }: Props) {
             </div>
 
             {/* CTA Buttons */}
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <CheckoutButton
-                sectorSlug={sector.slug}
-                plan="single"
-                label={`Download Model (Excel & Sheets) — $29`}
-                showGuarantee={true}
-              />
-              <CheckoutButton
-                sectorSlug={sector.slug}
-                plan="bundle"
-                variant="bundle"
-                label="Unlock All 48 Models Bundle — $49"
-              />
+            <div className="mt-9 flex flex-col items-center justify-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
+                <CheckoutButton
+                  sectorSlug={sector.slug}
+                  plan="single"
+                  label={`Download Model (Excel & Sheets) — $29`}
+                />
+                <CheckoutButton
+                  sectorSlug={sector.slug}
+                  plan="bundle"
+                  variant="bundle"
+                  label="Unlock All 48 Models Bundle — $49"
+                />
+              </div>
+              <div className="flex items-center gap-2 text-xs text-zinc-400">
+                <ShieldCheck className="h-4 w-4 text-emerald-400" />
+                <span>Apple Pay, Google Pay & Cards • Instant Delivery • 100% Unlocked</span>
+              </div>
             </div>
           </div>
         </div>
@@ -511,7 +516,6 @@ export default function SectorPseoPage({ params }: Props) {
               plan="bundle"
               variant="bundle"
               label="Download All 48 Models for $49 (Lifetime)"
-              showGuarantee={true}
             />
           </div>
         </section>

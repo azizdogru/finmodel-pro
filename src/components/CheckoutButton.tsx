@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Loader2, Download, Sparkles, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Loader2, Download, Sparkles, ArrowRight } from 'lucide-react';
 
 interface Props {
   sectorSlug?: string;
@@ -9,7 +9,6 @@ interface Props {
   label?: string;
   className?: string;
   variant?: 'primary' | 'secondary' | 'bundle' | 'outline';
-  showGuarantee?: boolean;
 }
 
 export default function CheckoutButton({
@@ -18,7 +17,6 @@ export default function CheckoutButton({
   label,
   className = '',
   variant = 'primary',
-  showGuarantee = false,
 }: Props) {
   const [loading, setLoading] = useState(false);
 
@@ -70,36 +68,27 @@ export default function CheckoutButton({
   }
 
   return (
-    <div className="inline-flex flex-col items-center">
-      <button
-        onClick={handleCheckout}
-        disabled={loading}
-        className={`group relative inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-75 disabled:cursor-wait ${variantClasses} ${className}`}
-      >
-        {loading ? (
-          <>
-            <Loader2 className="h-4 w-4 animate-spin text-zinc-950" />
-            <span>Preparing Secure Checkout...</span>
-          </>
-        ) : (
-          <>
-            {isBundle ? (
-              <Sparkles className="h-4 w-4 shrink-0" />
-            ) : (
-              <Download className="h-4 w-4 shrink-0" />
-            )}
-            <span>{label || defaultLabel}</span>
-            <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
-          </>
-        )}
-      </button>
-
-      {showGuarantee && (
-        <div className="mt-2.5 flex items-center gap-1.5 text-xs text-zinc-400">
-          <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-          <span>Apple Pay, Google Pay & Cards • Instant Delivery</span>
-        </div>
+    <button
+      onClick={handleCheckout}
+      disabled={loading}
+      className={`group relative inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-75 disabled:cursor-wait whitespace-nowrap h-12 ${variantClasses} ${className}`}
+    >
+      {loading ? (
+        <>
+          <Loader2 className="h-4 w-4 animate-spin text-zinc-950" />
+          <span>Preparing Checkout...</span>
+        </>
+      ) : (
+        <>
+          {isBundle ? (
+            <Sparkles className="h-4 w-4 shrink-0" />
+          ) : (
+            <Download className="h-4 w-4 shrink-0" />
+          )}
+          <span>{label || defaultLabel}</span>
+          <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
+        </>
       )}
-    </div>
+    </button>
   );
 }
