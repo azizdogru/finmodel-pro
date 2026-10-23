@@ -547,7 +547,7 @@ export async function generateSectorWorkbook(sector: SectorData): Promise<Uint8A
   const wsLoan = wb.addWorksheet('SBA Loan Schedule', { views: [{ showGridLines: true }] });
   applySheetBanner(wsLoan, 'SBA 7(a) COMMERCIAL LOAN UNDERWRITING & AMORTIZATION CALCULATOR', 'A1:D1');
 
-  const loanInputs = [
+  const loanInputs: Array<[string, any, string, string]> = [
     ['Total Project Financing Needed ($)', 150000, '$#,##0', 'Total startup capital required'],
     ['Borrower Equity Injection (%)', 0.20, '0.0%', 'Typical required down payment (10%-20%)'],
     ['Net SBA Loan Principal ($)', { formula: 'B2*(1-B3)' }, '$#,##0', 'Financed amount guaranteed by SBA'],
