@@ -1,3 +1,4 @@
+import { SisterTools } from './SisterTools';
 import React from 'react';
 import Link from 'next/link';
 import { LineChart, ShieldCheck, Lock, CheckCircle2 } from 'lucide-react';
@@ -91,7 +92,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
+
+        <SisterTools />
+
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-zinc-800/80 pt-6 text-xs text-zinc-500 sm:flex-row">
+
           <div>
             © {new Date().getFullYear()} FinModelPro. All rights reserved. Built for operational planning, bank loans, and venture capital due diligence.
           </div>
@@ -101,6 +106,7 @@ export default function Footer() {
             <Link href="/#faq" className="hover:text-zinc-300">FAQ</Link>
           </div>
         </div>
+
       </div>
     </footer>
   );
