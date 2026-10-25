@@ -12,10 +12,6 @@ export function SeoSchema() {
     },
         image: 'https://finmodel-pro.vercel.app/og-image.png',
     sku: 'FINMODEL-PRO-PRO-2026',
-    brand: {
-      '@type': 'Brand',
-      name: 'Financial Model Pro Spreadsheet',
-    },
     offers: {
       '@type': 'Offer',
       price: '49.00',
