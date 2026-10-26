@@ -85,6 +85,7 @@ export default function SectorPseoPage({ params }: Props) {
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
       url: pageUrl,
+      validFrom: '2024-01-01',
       priceValidUntil: '2027-12-31',
     },
     aggregateRating: {

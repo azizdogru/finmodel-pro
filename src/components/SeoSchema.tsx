@@ -16,6 +16,7 @@ export function SeoSchema() {
       '@type': 'Offer',
       price: '49.00',
       priceCurrency: 'USD',
+      validFrom: '2024-01-01',
       priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
       url: 'https://finmodel-pro.vercel.app',
@@ -24,7 +25,7 @@ export function SeoSchema() {
         applicableCountry: 'US',
         returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
         merchantReturnDays: 30,
-        returnMethod: 'https://schema.org/ReturnOnline',
+        returnMethod: 'https://schema.org/ReturnByMail',
         returnFees: 'https://schema.org/FreeReturn',
       },
       shippingDetails: {
