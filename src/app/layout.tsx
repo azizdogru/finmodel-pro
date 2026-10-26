@@ -6,6 +6,9 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://finmodel-pro.vercel.app'),
+  alternates: {
+    canonical: 'https://finmodel-pro.vercel.app',
+  },
   title: 'FinModelPro | Industry Financial Models & 3-Year Pro Forma Spreadsheets',
   description:
     'Bank-ready, investor-approved 3-year P&L, Cash Flow, CapEx schedules, and Unit Economics financial model templates for 48 commercial industries. Instant Microsoft Excel (.xlsx) & Google Sheets delivery.',
