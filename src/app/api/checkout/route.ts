@@ -95,10 +95,15 @@ export async function POST(req: Request) {
       }
     }
 
-    // 2. Direct Fallback using LemonSqueezy Buy URL
-    const fallbackBaseUrl =
-      process.env.LEMONSQUEEZY_CHECKOUT_URL ||
-      'https://depositdemand.lemonsqueezy.com/checkout/buy/44ba076c-b57d-429b-af3d-6962ccf4dc46';
+    // 2. Direct Fallback using LemonSqueezy Buy URL if explicitly configured for this product
+    const fallbackBaseUrl = process.env.LEMONSQUEEZY_CHECKOUT_URL;
+
+    if (!fallbackBaseUrl || fallbackBaseUrl.includes('44ba076c-b57d-429b-af3d-6962ccf4dc46')) {
+      return NextResponse.json(
+        { error: 'Payment gateway temporarily unavailable. Please try again shortly.' },
+        { status: 503 }
+      );
+    }
 
     const fallbackUrlObj = new URL(fallbackBaseUrl);
     fallbackUrlObj.searchParams.set('checkout[custom][sector]', sectorSlug || 'all');
