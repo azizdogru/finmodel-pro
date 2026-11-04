@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { SECTOR_MAP } from '@/data/sectors';
+import { createDownloadToken } from '@/lib/downloadAuth';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,7 +29,8 @@ export async function POST(req: Request) {
       process.env.NEXT_PUBLIC_BASE_URL ||
       (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://finmodel-pro.vercel.app');
 
-    const redirectUrl = `${baseUrl}/success?plan=${plan}${sectorSlug ? `&sector=${sectorSlug}` : ''}`;
+    const downloadToken = createDownloadToken('finmodel_download');
+    const redirectUrl = `${baseUrl}/success?plan=${plan}${sectorSlug ? `&sector=${sectorSlug}` : ''}&token=${encodeURIComponent(downloadToken)}`;
 
     const apiKey = process.env.LEMONSQUEEZY_API_KEY;
     const storeId = process.env.LEMONSQUEEZY_STORE_ID || '502656';

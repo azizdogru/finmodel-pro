@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { SECTOR_MAP } from '@/data/sectors';
 import { generateSectorWorkbook } from '@/lib/excelGenerator';
+import { verifyDownloadToken } from '@/lib/downloadAuth';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,6 +9,14 @@ export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const sectorSlug = searchParams.get('sector');
+    const token = searchParams.get('token');
+
+    if (!verifyDownloadToken(token, 'finmodel_download')) {
+      return NextResponse.json(
+        { error: 'Valid purchase token required to download financial model template' },
+        { status: 403 }
+      );
+    }
 
     if (!sectorSlug || !SECTOR_MAP[sectorSlug]) {
       return NextResponse.json(
