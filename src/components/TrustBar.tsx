@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Scale, Lock, Star } from 'lucide-react';
+import { ShieldCheck, FileSpreadsheet, Lock, Star } from 'lucide-react';
 
 export function TrustBar() {
   return (
@@ -10,18 +10,18 @@ export function TrustBar() {
             <ShieldCheck className="w-4 h-4" />
           </div>
           <div>
-            <p className="font-bold text-white text-xs">Zero Subscription Trap</p>
-            <p className="text-[11px] text-slate-400 leading-relaxed mt-0.5">Pay once, own forever. No hidden recurring fees or monthly club charges.</p>
+            <p className="font-bold text-white text-xs">Audit-Ready Financial Models</p>
+            <p className="text-[11px] text-slate-400 leading-relaxed mt-0.5">Dynamic 3-statement models built to institutional VC and private equity standards.</p>
           </div>
         </div>
 
         <div className="flex items-start gap-3">
           <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0 mt-0.5">
-            <Scale className="w-4 h-4" />
+            <FileSpreadsheet className="w-4 h-4" />
           </div>
           <div>
-            <p className="font-bold text-white text-xs">2026 Statutory Compliance</p>
-            <p className="text-[11px] text-slate-400 leading-relaxed mt-0.5">Verified against active U.S. 50-state statutes and administrative codes.</p>
+            <p className="font-bold text-white text-xs">Universal Excel & Google Sheets</p>
+            <p className="text-[11px] text-slate-400 leading-relaxed mt-0.5">Fully unlocked formulas (.xlsx) with zero circular errors, macros, or hidden cells.</p>
           </div>
         </div>
 
@@ -30,8 +30,8 @@ export function TrustBar() {
             <Lock className="w-4 h-4" />
           </div>
           <div>
-            <p className="font-bold text-white text-xs">Bank-Grade 256-Bit SSL</p>
-            <p className="text-[11px] text-slate-400 leading-relaxed mt-0.5">Encrypted payment processing & instant watermark-free document access.</p>
+            <p className="font-bold text-white text-xs">Instant Unlocked Download</p>
+            <p className="text-[11px] text-slate-400 leading-relaxed mt-0.5">Immediate delivery right after checkout with lifetime updates and documentation.</p>
           </div>
         </div>
 
@@ -40,8 +40,8 @@ export function TrustBar() {
             <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
           </div>
           <div>
-            <p className="font-bold text-white text-xs">Rated 4.9/5 by 14,000+ Users</p>
-            <p className="text-[11px] text-slate-400 leading-relaxed mt-0.5">Trusted by tenants, property owners, and SMBs across all 50 states.</p>
+            <p className="font-bold text-white text-xs">Trusted by Founders & CFOs</p>
+            <p className="text-[11px] text-slate-400 leading-relaxed mt-0.5">Used by pre-seed to Series B startups, boutique CFOs, and venture studios.</p>
           </div>
         </div>
       </div>
