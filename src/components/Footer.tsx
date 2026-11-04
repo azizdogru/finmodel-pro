@@ -109,6 +109,8 @@ export default function Footer() {
             © {new Date().getFullYear()} FinModelPro. All rights reserved. Built for operational planning, bank loans, and venture capital due diligence.
           </div>
           <div className="flex gap-4">
+            <Link href="/privacy" className="hover:text-slate-300 transition">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-slate-300 transition">Terms of Service</Link>
             <Link href="/" className="hover:text-zinc-300">Home</Link>
             <Link href="/#pricing" className="hover:text-zinc-300">Pricing</Link>
             <Link href="/#faq" className="hover:text-zinc-300">FAQ</Link>
