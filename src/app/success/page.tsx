@@ -21,7 +21,27 @@ import {
 
 function SuccessContent() {
   const searchParams = useSearchParams();
-  const token = searchParams.get('token') || searchParams.get('order_id') || searchParams.get('checkout_id') || '';
+  const urlToken = searchParams.get('token') || '';
+  const orderParam = searchParams.get('order') || searchParams.get('order_id') || searchParams.get('checkout_id') || '';
+
+  const [activeToken, setActiveToken] = useState(() => {
+    if (urlToken) {
+      if (typeof window !== 'undefined') {
+        try { localStorage.setItem('fmp_download_token', urlToken); } catch {}
+      }
+      return urlToken;
+    }
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('fmp_download_token');
+        if (saved) return saved;
+      } catch {}
+    }
+    return '';
+  });
+
+  const hasAccess = Boolean(activeToken || orderParam);
+  const token = activeToken || orderParam;
   const sectorSlug = searchParams.get('sector') || 'coffee-shop-financial-model-template';
   const plan = searchParams.get('plan') || 'single';
 
@@ -70,13 +90,15 @@ function SuccessContent() {
   };
 
   const handleClientDownload = async (targetSector = sector) => {
-    if (!token) {
+    if (!hasAccess) {
       alert('Valid purchase session required. Please complete checkout to download.');
       return;
     }
     try {
       setDownloading(true);
-      window.location.href = `/api/download?sector=${targetSector.slug}&token=${encodeURIComponent(token)}`;
+      const tokenQuery = activeToken ? `&token=${encodeURIComponent(activeToken)}` : '';
+      const orderQuery = orderParam ? `&order=${encodeURIComponent(orderParam)}` : '';
+      window.location.href = `/api/download?sector=${targetSector.slug}${tokenQuery}${orderQuery}`;
     } catch (err) {
       console.error('Download error:', err);
     } finally {
@@ -84,7 +106,7 @@ function SuccessContent() {
     }
   };
 
-  if (!token) {
+  if (!hasAccess) {
     return (
       <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center text-white">
         <Link

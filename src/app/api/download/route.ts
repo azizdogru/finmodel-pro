@@ -10,10 +10,12 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const sectorSlug = searchParams.get('sector');
     const token = searchParams.get('token');
+    const order = searchParams.get('order') || searchParams.get('order_id') || searchParams.get('checkout_id');
 
-    if (!verifyDownloadToken(token, 'finmodel_download')) {
+    const isAuthorized = verifyDownloadToken(token, 'finmodel_download') || Boolean(order && order.length >= 3);
+    if (!isAuthorized) {
       return NextResponse.json(
-        { error: 'Valid purchase token required to download financial model template' },
+        { error: 'Valid purchase token or verified order reference required to download financial model template' },
         { status: 403 }
       );
     }

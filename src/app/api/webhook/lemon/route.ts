@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
+import { createDownloadToken } from '@/lib/downloadAuth';
 
 export async function POST(req: NextRequest) {
   try {
@@ -68,7 +69,8 @@ export async function POST(req: NextRequest) {
       const productName = attributes.first_order_item?.variant_name || attributes.first_order_item?.product_name || '5-Year Financial Model & Investor Pro-Forma';
 
       const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://finmodel-pro.vercel.app';
-      const accessUrl = `${baseUrl}/success?order=${orderNumber}`;
+      const downloadToken = createDownloadToken('finmodel_download', 720); // 30-day validity
+      const accessUrl = `${baseUrl}/success?order=${orderNumber}&token=${encodeURIComponent(downloadToken)}`;
 
       // Automated email delivery via Resend API
       const resendApiKey = process.env.RESEND_API_KEY;
@@ -79,44 +81,44 @@ export async function POST(req: NextRequest) {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Your 5-Year Financial Model & Investor Pro-Forma Is Ready</title>
+  <title>Your Financial Model & Investor Pro-Forma (.xlsx) Is Ready</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f8fafc; margin: 0; padding: 24px; color: #1e293b; }
     .card { max-width: 580px; margin: 0 auto; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-    .header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 32px 24px; text-align: center; color: #ffffff; }
+    .header { background: linear-gradient(135deg, #064e3b 0%, #047857 100%); padding: 32px 24px; text-align: center; color: #ffffff; }
     .content { padding: 32px 24px; }
-    .btn { display: inline-block; background-color: #2563eb; color: #ffffff !important; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 10px; text-decoration: none; margin: 20px 0; }
-    .info-box { background: #f1f5f9; border-radius: 8px; padding: 16px; margin: 20px 0; font-size: 13px; line-height: 1.5; }
+    .btn { display: inline-block; background-color: #059669; color: #ffffff !important; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 10px; text-decoration: none; margin: 20px 0; }
+    .info-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin: 20px 0; font-size: 13px; line-height: 1.5; color: #166534; }
     .footer { text-align: center; padding: 20px; font-size: 12px; color: #64748b; border-top: 1px solid #e2e8f0; }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="header">
-      <h1 style="margin: 0; font-size: 24px; font-weight: 800;">Payment Confirmed</h1>
-      <p style="margin: 8px 0 0; color: #94a3b8; font-size: 14px;">Order #${orderNumber} • ${totalFormatted}</p>
+      <h1 style="margin: 0; font-size: 24px; font-weight: 800;">Order Confirmed • Instant Download</h1>
+      <p style="margin: 8px 0 0; color: #a7f3d0; font-size: 14px;">Order #${orderNumber} • ${totalFormatted}</p>
     </div>
     <div class="content">
       <p>Hello <strong>${customerName}</strong>,</p>
-      <p>Thank you for your order. Your official <strong>${productName}</strong> has been generated and is ready for permanent download.</p>
+      <p>Thank you for your purchase. Your dynamic <strong>${productName}</strong> workbook is ready for immediate download.</p>
       
       <div style="text-align: center;">
-        <a href="${accessUrl}" class="btn">Download Official Document (PDF)</a>
+        <a href="${accessUrl}" class="btn">Download Financial Model (.xlsx)</a>
       </div>
 
       <div class="info-box">
-        <strong>Document Instructions:</strong>
+        <strong>Getting Started Instructions:</strong>
         <ul style="margin: 8px 0 0; padding-left: 20px;">
-          <li>Review all names, dates, and terms for complete accuracy.</li>
-          <li>Save a signed copy for your permanent records.</li>
-          <li>If required, notarize or serve according to your state statutory instructions.</li>
+          <li>Compatible with Microsoft Excel 2016+, Office 365, and Google Sheets (File &rarr; Import).</li>
+          <li>Enter your custom revenue, payroll, and margin numbers in the designated blue input cells on the <em>Assumptions</em> tab.</li>
+          <li>The 3-statement financials (P&amp;L, Balance Sheet, Cash Flow) and SBA debt amortization schedules recalculate automatically.</li>
         </ul>
       </div>
 
-      ${receiptUrl ? `<p style="font-size: 13px; color: #64748b;">Official Lemon Squeezy Receipt: <a href="${receiptUrl}" style="color: #2563eb;">View Receipt</a></p>` : ''}
+      ${receiptUrl ? `<p style="font-size: 13px; color: #64748b;">Official Lemon Squeezy Receipt: <a href="${receiptUrl}" style="color: #059669;">View Receipt</a></p>` : ''}
     </div>
     <div class="footer">
-      <p>Instant Statutory Document Delivery System • 256-Bit SSL Encrypted</p>
+      <p>FinModelPro • Automated Financial Modeling &amp; SBA Underwriting Suite • 256-Bit SSL Encrypted</p>
     </div>
   </div>
 </body>
