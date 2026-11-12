@@ -4,6 +4,20 @@ import { createDownloadToken } from '@/lib/downloadAuth';
 
 export const dynamic = 'force-dynamic';
 
+
+function getValidEmail(email?: string): string | null {
+  if (!email || typeof email !== 'string') return null;
+  const trimmed = email.trim();
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+  return emailRegex.test(trimmed) ? trimmed : null;
+}
+
+function getValidName(name?: string): string | null {
+  if (!name || typeof name !== 'string') return null;
+  const clean = name.trim().replace(/[<>"']/g, '').slice(0, 100);
+  return clean.length >= 1 ? clean : null;
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
@@ -111,9 +125,8 @@ export async function POST(req: Request) {
     fallbackUrlObj.searchParams.set('checkout[custom][sector]', sectorSlug || 'all');
     fallbackUrlObj.searchParams.set('checkout[custom][plan]', plan);
     fallbackUrlObj.searchParams.set('checkout[success_url]', redirectUrl);
-    if (email) {
-      fallbackUrlObj.searchParams.set('checkout[email]', email);
-    }
+    const validEmail = getValidEmail(email);
+      if (validEmail) fallbackUrlObj.searchParams.set('checkout[email]', validEmail);
 
     return NextResponse.json({
       url: fallbackUrlObj.toString(),
