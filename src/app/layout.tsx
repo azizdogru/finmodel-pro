@@ -1,3 +1,4 @@
+import { ClarityAnalytics } from '@/components/ClarityAnalytics';
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
@@ -49,6 +50,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <Analytics />
+        <ClarityAnalytics />
       </body>
     </html>
   );
