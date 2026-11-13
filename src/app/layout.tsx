@@ -1,3 +1,4 @@
+import { ClientToastHandler } from '@/components/ClientToastHandler';
 import { ClarityAnalytics } from '@/components/ClarityAnalytics';
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
@@ -46,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="bg-zinc-950 text-zinc-100 antialiased selection:bg-emerald-500 selection:text-zinc-950 min-h-screen flex flex-col justify-between">
+        <ClientToastHandler />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
