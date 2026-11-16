@@ -73,6 +73,7 @@ export async function POST(req: Request) {
                 checkout_data: {
                   email: email || undefined,
                   custom: {
+                    site: 'finmodel-pro',
                     sector: sectorSlug || 'all',
                     plan: plan,
                   },
