@@ -5,6 +5,13 @@ import { ArrowLeft, ShieldCheck, Lock, EyeOff, FileText, CheckCircle } from 'luc
 export const metadata = {
   title: 'Privacy Policy | FinModel Pro',
   description: 'FinModel Pro official privacy policy, client-side data protection, and zero-storage architecture.',
+  alternates: {
+    canonical: '/privacy',
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function PrivacyPage() {
