@@ -163,6 +163,7 @@ export async function POST(req: NextRequest) {
             body: JSON.stringify({
               from: process.env.EMAIL_FROM || 'FinModelPro Orders <orders@finmodel-pro.com>',
               to: [customerEmail],
+            reply_to: process.env.EMAIL_REPLY_TO || 'dogruaziz@gmail.com',
               subject: `Your Official 5-Year Financial Model & Investor Pro-Forma is Ready (Order #${orderNumber})`,
               html: emailHtml,
             }),
