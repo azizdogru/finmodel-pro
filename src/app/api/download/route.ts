@@ -12,7 +12,7 @@ export async function GET(req: Request) {
     const token = searchParams.get('token');
     const order = searchParams.get('order') || searchParams.get('order_id') || searchParams.get('checkout_id');
 
-    const isAuthorized = verifyDownloadToken(token, 'finmodel_download') || Boolean(order && order.length >= 3);
+    const isAuthorized = verifyDownloadToken(token, 'finmodel_download');
     if (!isAuthorized) {
       return NextResponse.json(
         { error: 'Valid purchase token or verified order reference required to download financial model template' },
